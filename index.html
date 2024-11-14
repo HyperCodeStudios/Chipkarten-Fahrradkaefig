@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFC UID Leser</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+    #error {
+      margin-top: 10px;
+      font-size: 16px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>NFC UID Leser</h1>
+  <button id="scanButton">NFC-Tag scannen</button>
+  <div id="output">Warte auf Scan...</div>
+  <div id="error"></div>
+
+  <script>
+    document.getElementById('scanButton').addEventListener('click', async () => {
+      const output = document.getElementById('output');
+      const error = document.getElementById('error');
+      
+      output.textContent = 'Bitte halte ein NFC-Tag an dein Gerät...';
+      error.textContent = '';
+
+      if ('NDEFReader' in window) {
+        try {
+          const ndef = new NDEFReader();
+          await ndef.scan();
+
+          ndef.onreading = (event) => {
+            const uid = event.serialNumber; // UID des NFC-Tags
+            if (uid) {
+              output.textContent = `UID: ${uid}`;
+            } else {
+              output.textContent = 'UID konnte nicht ausgelesen werden.';
+            }
+          };
+
+          ndef.onreadingerror = () => {
+            error.textContent = 'Fehler beim Lesen des NFC-Tags.';
+          };
+        } catch (err) {
+          error.textContent = `Fehler: ${err.message}`;
+        }
+      } else {
+        error.textContent = 'Web NFC wird von diesem Gerät/Browser nicht unterstützt.';
+      }
+    });
+  </script>
+</body>
+</html>
