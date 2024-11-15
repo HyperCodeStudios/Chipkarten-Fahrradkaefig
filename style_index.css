@@ -1,0 +1,224 @@
+* {
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    max-height: 10vh;
+    width: 100vw;
+    background-color: rgb(10, 10, 10);
+    padding: 0.5vh;
+    justify-content: space-between;
+}
+
+main {
+    width: 100%;
+    margin-top: 13vh;
+    align-items: top;
+}
+
+.telling {
+    width: 94%;
+    min-height: fit-content;
+    background-image: url(Bike.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 1vh;
+    margin: 2.5%;
+    padding: 2.25%;
+    font-size: large;
+}
+
+#intro {
+    font-size: large;
+    height: fit-content;
+    background-image: none;
+    background-color: rgb(40, 40, 40);
+}
+
+.logo {
+    display: flex;
+    align-self: center;
+    margin-right: 2.5vh;
+    width: 9vh;
+    margin-left: 0.5vh;
+    padding: 1vh;
+    border-radius: 50%;
+    background-color: rgb(10, 10, 10);
+    float: left;
+}
+
+#logo {
+    display: flex;
+    align-self: center;
+    background-color: rgb(10, 10, 10);
+    height: 7vh;
+    /*width: zum ändern des Abstands zwischen der Uhr und dem Logo*/
+    width: 9.5vh;
+}
+
+.links {
+    text-decoration: none;
+    font-size: 3vh;
+    margin-right: 2.5vh;
+    background-color: rgb(10, 10, 10);
+}
+
+.links:hover {
+    text-decoration: underline;
+    font-size: 3.5vh;
+    margin-right: 2.5vh;
+    background-color: rgb(10, 10, 10);
+}
+
+.color {
+    background-color: rgb(10, 10, 10);
+    margin-left: 4vh;
+}
+
+body {
+    background-color: rgb(30, 30, 30);
+}
+
+.icon {
+    border-radius: 10px;
+    background-color: white;
+    margin: 1vh;
+    padding: 2vh;
+    height: 6.67vh;
+}
+
+#clock {
+    font-size: 3vh;
+    color: white;
+}
+
+#logo_time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+	font-size: larger;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 90vw;
+}
+
+.echo_big {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    width: 100vw;
+    margin-top: 10vw;
+    margin-bottom: 20vw;
+}
+
+.echo_befehl {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    font-size: larger;
+}
+
+.echo_under {
+    margin-top: 50vw;
+}
+
+.footer_p {
+    min-height: 3vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: smaller;
+    color: rgb(100, 100, 100);
+    margin: 1vh;
+}
+
+.title_div {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-content: center;
+}
+
+.title {
+    display: flex;
+    max-width: fit-content;
+    justify-content: center;
+    margin: 4vh;
+    padding: 4vh;
+    border-radius: 25px;
+    background-color: rgb(50, 50, 50);
+}
+
+.main_credits {
+    width: 90vw;
+    margin-left: 10vw;
+    margin-top: 6vh;
+    align-content: center;
+    justify-content: center;
+    font-size: large;
+    max-height: fit-content;
+}
+
+.right {
+    float: right;
+    width: 50%;
+}
+
+.left {
+    float: left;
+    width: 50%;
+}
+
+.names {
+    margin-left: 3vh;
+}
+
+.bottom {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    margin-top: 3vh;
+    align-content: center;
+    justify-content: center;
+    font-size: large;
+    max-height: fit-content;
+}
+
+footer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.back {
+    margin-top: 15vh;
+    padding: 2vh;
+    font-size: larger;
+    background-color: rgb(40, 40, 40);
+    border-radius: 20px;
+    border: 10px solid rgb(45, 45, 45);
+}
+
+#name, .thanks {
+    position: absolute;
+}
+
+#name {
+    margin-top: 5vh;
+}

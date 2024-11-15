@@ -1,70 +1,100 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NFC UID Leser</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    #output {
-      margin-top: 20px;
-      font-size: 18px;
-      color: green;
-    }
-    #error {
-      margin-top: 10px;
-      font-size: 16px;
-      color: red;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chipkarten für den Fahrradkäfig</title>
+    <link rel="stylesheet" href="style_index.css">
+    <script>
+        function displayTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const formattedTime = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = formattedTime;
+        }
+
+        window.onload = function() {
+            displayTime();
+            setInterval(displayTime, 1000);
+        };
+    </script>
 </head>
 <body>
-  <h1>NFC UID Leser</h1>
-  <button id="scanButton">NFC-Tag scannen</button>
-  <div id="output">Warte auf Scan...</div>
-  <div id="error"></div>
+    <header>
+        <div id="logo_time">
+            <a href="index.php" id="logo">
+                <img class="logo" src="logo.jpg" alt="logo">
+            </a>
+            <div id="clock"></div>
+        </div>
 
-  <script>
-    document.getElementById('scanButton').addEventListener('click', async () => {
-      const output = document.getElementById('output');
-      const error = document.getElementById('error');
-      
-      output.textContent = 'Bitte halte ein NFC-Tag an dein Gerät...';
-      error.textContent = '';
+        <div class="color">
+            <a class="links" href="index.html">Home</a>
+            <a class="links" href="all_users.php">Nutzer/innen</a>
+            <a class="links" href="logs.php">Logs</a>
+            <a class="links" href="credits.html">Mitwirkende</a>
+        </div>  
+    </header>
 
-      if ('NDEFReader' in window) {
-        try {
-          const ndef = new NDEFReader();
-          await ndef.scan();
+    <main>
+        <div class="telling" id="intro">
+            <h1 style="margin-bottom: 2vh;">Chipkarten für den Fahrradkäfig</h1>
+            <p style="font-size: large;">
+                Willkommen zu unserer Administrationswebsite für das Fahrradkäfig-Zugangssystem!
+                Mit dieser Website können Administratoren Benutzerzugänge verwalten, 
+                Zugangsprotokolle einsehen und Systemkonfigurationen anpassen.
+            </p>
+        </div>
+        <div class="telling">
+            <p>
+                Die Administrationswebsite für das Fahrradkäfig-Zugangssystem bietet eine umfassende Lösung für die Verwaltung von Chip-basierten Zugangskontrollen. 
+                Hier sind die Hauptfunktionen und -merkmale der Plattform:
+            </p>
+            <br>
+            <h3>Benutzerverwaltung</h3>
+            <p>
+                Die Benutzerverwaltung ist ein zentrales Feature der Administrationswebsite. Administratoren können neue Benutzer hinzufügen, bestehende Benutzerinformationen 
+                aktualisieren und Zugangsberechtigungen verwalten. Jeder Benutzer erhält einen einzigartigen Chip, der für den Zugang zum Fahrradkäfig verwendet wird. 
+                Über die Benutzeroberfläche können Administratoren:
+            </p>
+            <br>
+            <ul>
+                <li><strong>Benutzer hinzufügen</strong>: Neue Benutzer können durch Eingabe von Namen, Benutzernamen und Chip-ID registriert werden.</li>
+                <li><strong>Benutzerinformationen aktualisieren</strong>: Administratoren können Benutzerdaten wie Namen, Benutzernamen und Chip-IDs schnell und einfach ändern.</li>
+            </ul>
+            <br>
+            <h3>Zugangsprotokolle</h3>
+            <p>
+                Die Website bietet detaillierte Zugangsprotokolle, die es Administratoren ermöglichen, die Nutzung des Fahrradkäfiges zu überwachen. Diese Protokolle enthalten Informationen wie:
+            </p>
+            <br>
+            <ul>
+                <li><strong>Zeitstempel</strong>: Datum und Uhrzeit des Zugangs.</li>
+                <li><strong>Benutzerinformationen</strong>: Name und Chip-ID des Benutzers, der Zugang erhalten hat.</li>
+                <li><strong>Zugangsstatus</strong>: Ob der Zugang gewährt oder verweigert wurde.</li>
+            </ul>
+            <p>
+            Diese Protokolle helfen Administratoren, die Sicherheit zu gewährleisten und mögliche Missbrauchsfälle zu identifizieren.
+            </p>
+            <br>
+            <h3>Sicherheit und Datenschutz</h3>
+            <p>
+                Die Sicherheit der Benutzerdaten und die Integrität des Zugangssystems haben höchste Priorität. Die Website verwendet moderne Verschlüsselungstechnologien, um sicherzustellen, 
+                dass alle Daten sicher übertragen und gespeichert werden. Darüber hinaus können Administratoren regelmäßige Sicherheitsüberprüfungen durchführen und das System auf dem neuesten Stand halten.
+            </p>
+            <p>
+                Die Administrationswebsite für das Fahrradkäfig-Zugangssystem ist ein leistungsstarkes Werkzeug, das die Verwaltung und Überwachung von Fahrradkäfigen effizient und sicher gestaltet. 
+                Mit einer benutzerfreundlichen Oberfläche und umfassenden Funktionen bietet sie alles, was Administratoren benötigen, um den Zugang zu ihren Fahrradkäfigen effektiv zu verwalten.
+            </p>
+        </div>            
+    </main>
 
-          ndef.onreading = (event) => {
-            const uid = event.serialNumber; // UID des NFC-Tags
-            if (uid) {
-              output.textContent = `UID: ${uid}`;
-            } else {
-              output.textContent = 'UID konnte nicht ausgelesen werden.';
-            }
-          };
-
-          ndef.onreadingerror = () => {
-            error.textContent = 'Fehler beim Lesen des NFC-Tags.';
-          };
-        } catch (err) {
-          error.textContent = `Fehler: ${err.message}`;
-        }
-      } else {
-        error.textContent = 'Web NFC wird von diesem Gerät/Browser nicht unterstützt.';
-      }
-    });
-  </script>
+    <footer>
+        <p class="footer_p">Diese Website wurde vom Projekt "Chipkarten für den Fahrradkäfig", aus dem Jahre 2024 erstellt.</p>
+        <p class="footer_p">Vielen Dank für's Nutzen!</p>
+        <a href="credits.html" class="footer_p" id="credits">Credits</a>
+    </footer>
 </body>
 </html>

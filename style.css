@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Arial";
+    font-size: 3vh;
+    color: white;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-weight: 100;
+}
+
+body {
+    background-color: rgb(30, 30, 30);
+}
+
+h2 {
+    font-weight: 300;
+    margin-bottom: 1vh;
+}
+
+header {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(10, 10, 10);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    width: 7vh;
+    border-radius: 50%;
+    margin-left: 3vh;
+}
+
+header a {
+    text-decoration: none;
+    margin-right: 3vh;
+}
+
+header a:hover {
+    text-decoration: underline;
+    font-size: 3.5vh;
+}
+
+header div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.content {
+    margin-top: 5vh;
+    min-width: 100vw;
+    min-height: 85vh;
+    padding-top: 10vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    padding-right: 10vw;
+    padding-left: 10vw;
+    background-color: rgb(40, 40, 40);
+    border-radius: 10px;
+}
+
+.button1 {
+    border-style: hidden;
+    width: 60vw;
+    height: 5vh;
+    background-color: rgb(50, 50, 50);
+    border: 2px sold white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button2 {
+    width: calc(80vw + 17vh + 20vw);
+    height: 5vh;
+    border-style: hidden;
+    background-color: rgb(40, 40, 40);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 1vh;
+}
+
+.button3 {
+    height: 4vh;
+    cursor: pointer;
+	background: transparent;
+}
+
+.input1 {
+    border-style: hidden;
+    width: 60vw;
+    height: 5vh;
+    border: 2px sold white;
+    border-radius: 10px;
+    margin-bottom: 1vh;
+    background-color: rgb(50, 50, 50);
+    padding-left: 1vw;
+}
+
+.table {
+    background-color: rgb(40, 40, 40);
+    border-radius: 10px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1vh;
+}
+
+#logTable td {
+	width: 20vw;
+	height: 5vh;
+}
+
+td {
+    width: 20vw;
+    height: 5vh;
+    background-color: rgb(50, 50, 50);
+    text-align: center;
+}
+.special_td {
+    height: 5vh;
+	width: 17vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background-color: rgb(40, 40, 40);
+}
+
+.special_td  img{
+	margin-left: 1vh;
+}
+
+.special_td img:hover {
+    background-color: red;
+    border-radius: 10px;
+    border: 1vh solid red;
+}
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#clock {
+    color: white;
+    width: 20vw;
+    margin-left: 1vh;
+}
+
+@media (min-width: 700px) {
+    td {
+        width: 10vw;
+        height: 5vh;
+    }
+
+    .table {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+    }
+
+    form {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+    }
+
+    .input1 {
+        width: 30vw;
+        height: 5vh;
+    }
+
+    .button1 {
+        width: 30vw;
+        height: 5vh;
+    }
+
+    .button2 {
+        width: calc(5vh + 5vh + 40vw + 17vh);
+        height: 5vh;
+    }
+}
